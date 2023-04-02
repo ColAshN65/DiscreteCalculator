@@ -30,22 +30,30 @@
             <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
+        <Style x:Key="SetsTextBoxStyle" TargetType="TextBox">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+        </Style>
     </Window.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="18"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <TextBox Text="{Binding ExpressionText}" Style="{StaticResource BaseTextStyle}"/>
-        <Grid Grid.Row="1">
+        <Menu>
+            <MenuItem Header="Как это работатет?" Command="{Binding AppInfoButton}"/>
+        </Menu>
+        <TextBox Grid.Row="1" Text="{Binding ExpressionText}" Style="{StaticResource BaseTextStyle}"/>
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="13*"/>
                 <ColumnDefinition Width="7*"/>
             </Grid.ColumnDefinitions>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="31*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -61,11 +69,11 @@
                 <Button x:Name="Butt3" Grid.Row="3" Style="{StaticResource BaseButtonStyle}" Command="{Binding OperationButton}" CommandParameter="{Binding Content, ElementName = Butt3}">3</Button>
                 <Button x:Name="Butt4" Grid.Row="4" Style="{StaticResource BaseButtonStyle}" Command="{Binding OperationButton}" CommandParameter="{Binding Content, ElementName = Butt4}">4</Button>
                 
-                <TextBox Grid.Column="1" Text="{Binding BaseElements[0]}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding BaseElements[1]}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding BaseElements[2]}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding BaseElements[3]}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding BaseElements[4]}"/>
+                <TextBox Grid.Column="1" Text="{Binding BaseElements[0]}" Style="{StaticResource SetsTextBoxStyle}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding BaseElements[1]}" Style="{StaticResource SetsTextBoxStyle}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding BaseElements[2]}" Style="{StaticResource SetsTextBoxStyle}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding BaseElements[3]}" Style="{StaticResource SetsTextBoxStyle}"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding BaseElements[4]}" Style="{StaticResource SetsTextBoxStyle}"/>
             </Grid>
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
@@ -73,6 +81,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -87,8 +96,10 @@
                 <Button x:Name="ButtSlash" Grid.Column="1" Grid.Row="1" Style="{StaticResource BaseButtonStyle}" Command="{Binding OperationButton}" CommandParameter="{Binding Content, ElementName = ButtSlash}">/</Button>
                 <Button x:Name="ButtX" Grid.Column="1" Grid.Row="2" Style="{StaticResource BaseButtonStyle}" Command="{Binding OperationButton}" CommandParameter="{Binding Content, ElementName = ButtX}">X</Button>
                 <Button x:Name="ButtC" Grid.Column="1" Grid.Row="3" Style="{StaticResource BaseButtonStyle}" Command="{Binding OperationButton}" CommandParameter="{Binding Content, ElementName = ButtC}">C</Button>
-                <Button x:Name="ButtEq" Grid.Column="1" Grid.Row="4" Style="{StaticResource BaseButtonStyle}" Command="{Binding ResultButton}">=</Button>
-                <Button x:Name="ButtClear" Grid.Row="4" Style="{StaticResource BaseButtonStyle}" Command="{Binding ClearAllButton}">Clear All</Button>
+                <Button x:Name="ButtBackBrack" Grid.Row="4" Style="{StaticResource BaseButtonStyle}" Command="{Binding OperationButton}" CommandParameter="{Binding Content, ElementName = ButtBackBrack}">(</Button>
+                <Button x:Name="ButtForwBrack" Grid.Row="4" Grid.Column="1" Style="{StaticResource BaseButtonStyle}" Command="{Binding OperationButton}" CommandParameter="{Binding Content, ElementName = ButtForwBrack}">)</Button>
+                <Button x:Name="ButtEq" Grid.Column="1" Grid.Row="5" Style="{StaticResource BaseButtonStyle}" Command="{Binding ResultButton}">=</Button>
+                <Button x:Name="ButtClear" Grid.Row="5" Style="{StaticResource BaseButtonStyle}" Command="{Binding ClearAllButton}">Clear All</Button>
 
             </Grid>
         </Grid>

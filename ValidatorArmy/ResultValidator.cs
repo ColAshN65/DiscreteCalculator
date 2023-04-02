@@ -38,7 +38,9 @@ namespace DiscreteCalculator.ValidatorArmy
             try
             {
                 processor = new DiscreteProcessor($"({ExpressionText})", convertor.GetElements());
-                MessageBox.Show(processor.GetResult().GetBodyInString(), "Результат:");
+                MessageBox.Show($"{processor.GetResult().GetBodyInString()}" +
+                    $"\nРезультат сохранен в буфер обмена", "Результат:");
+                Clipboard.SetText(processor.GetResult().GetBodyInString());
             }
             catch
             {
