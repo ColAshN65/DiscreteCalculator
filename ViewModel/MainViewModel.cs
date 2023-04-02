@@ -62,29 +62,7 @@ namespace DiscreteCalculator.ViewModel
             {
                 return new BaseCommand((obj) =>
                 {
-                    BaseSetsConvertor convertor = null;
-                    ExpressionInspector inspector;
-                    DiscreteProcessor processor;
-
-                    try 
-                    { 
-                        inspector = new ExpressionInspector(ExpressionText);
-                        try
-                        {
-                            convertor = new BaseSetsConvertor(BaseElements);
-                            try
-                            {
-                                processor = new DiscreteProcessor($"({ExpressionText})", convertor.GetElements());
-                                MessageBox.Show(processor.GetResult().GetBodyInString(), "Результат:");
-                            }
-                            catch { MessageBox.Show("Ошибка вычислительного модуля", "Ошибка программного модуля:"); }
-                        }
-                        catch { MessageBox.Show("Содержимое множеств введено неверно", "Ошибка введенных данных:"); }
-                    }
-                    catch { MessageBox.Show("Допущена ошибка в выражении", "Ошибка введенных данных:"); }
-
-                    
-
+                    ResultValidator.Validate(ExpressionText, BaseElements);
                 });
             }
         }
