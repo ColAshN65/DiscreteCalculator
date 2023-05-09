@@ -1,9 +1,4 @@
-﻿using DiscreteCalculator.ValidatorArmy;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace DiscreteCalculator.ValidatorArmy
 {
@@ -23,7 +18,7 @@ namespace DiscreteCalculator.ValidatorArmy
         public ExpressionInspector(string Expression)
         {
             if (Expression == "") { throw new Exception(); }
-            foreach(var element in Expression)
+            foreach (var element in Expression)
             {
                 if (SetValidator.Validate(element))
                 {
@@ -44,9 +39,9 @@ namespace DiscreteCalculator.ValidatorArmy
                 {
                     if (_CountForwardBrackets >= _CountBackBrackets) { throw new Exception(); }
 
-                    if (_lastElement == ElementType.Set || _lastElement == ElementType.ForwardBracket) { _lastElement= ElementType.ForwardBracket; _CountForwardBrackets++; }
+                    if (_lastElement == ElementType.Set || _lastElement == ElementType.ForwardBracket) { _lastElement = ElementType.ForwardBracket; _CountForwardBrackets++; }
                     else { throw new Exception(); }
-                } 
+                }
             }
         }
     }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DiscreteCalculator.Model
 {
@@ -16,7 +12,7 @@ namespace DiscreteCalculator.Model
 
             foreach (char element in strElement)
             {
-                if((element == ' ' || element == ',') && Value != "") 
+                if ((element == ' ' || element == ',') && Value != "")
                 {
                     Body.Add(int.Parse(Value));
                     Value = "";
@@ -28,7 +24,7 @@ namespace DiscreteCalculator.Model
             Element = new DiscreteElement(Body);
         }
         public DiscreteElement GetElement() { return Element; }
-        
+
 
     }
 }

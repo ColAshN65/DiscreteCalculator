@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DiscreteCalculator.Model.Operations
+﻿namespace DiscreteCalculator.Model.Operations
 {
     public class Complement : DiscreteNumbersOperation
     {

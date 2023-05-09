@@ -1,21 +1,13 @@
 ﻿using DiscreteCalculator.Base;
-using System.Runtime.CompilerServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Prism.Commands;
-using DiscreteCalculator.Model;
-using System.Windows;
 using DiscreteCalculator.ValidatorArmy;
+using System.Windows;
+using System.Windows.Input;
 
 namespace DiscreteCalculator.ViewModel
 {
     public class MainViewModel : BaseNotifyPropertyChanged
     {
-        private string[] _baseElements = new string[5] {"0", "0", "0", "0", "0"};
+        private string[] _baseElements = new string[5] { "0", "0", "0", "0", "0" };
         public string[] BaseElements
         {
             get { return _baseElements; }

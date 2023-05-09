@@ -1,12 +1,6 @@
 ﻿using DiscreteCalculator.Model.Operations;
 using DiscreteCalculator.ValidatorArmy;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DiscreteCalculator.Model
 {
@@ -42,7 +36,7 @@ namespace DiscreteCalculator.Model
         }
         private void ForwardBracketDetected()
         {
-            while(StackOperations.Peek().GetType() != new BackBracket().GetType())
+            while (StackOperations.Peek().GetType() != new BackBracket().GetType())
             {
                 Calculating();
             }
@@ -60,16 +54,18 @@ namespace DiscreteCalculator.Model
         }
         private DiscreteNumbersOperation OperartionDefine(char element)
         {
-            switch(element)
+            switch (element)
             {
                 case 'U':
                     {
                         return new Union();
-                    }break;
+                    }
+                    break;
                 case '/':
                     {
                         return new Complement();
-                    }break;
+                    }
+                    break;
                 case 'X':
                     {
                         return new Intersect();

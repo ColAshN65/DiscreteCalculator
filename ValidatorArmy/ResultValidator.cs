@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DiscreteCalculator.Model;
 using System.Windows;
-using DiscreteCalculator.Model;
 
 namespace DiscreteCalculator.ValidatorArmy
 {

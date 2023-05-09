@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DiscreteCalculator.Model
 {
@@ -17,6 +13,6 @@ namespace DiscreteCalculator.Model
                 Elements.Add(convertor.GetElement());
             }
         }
-        public DiscreteElement[] GetElements() { return  Elements.ToArray(); }
+        public DiscreteElement[] GetElements() { return Elements.ToArray(); }
     }
 }
